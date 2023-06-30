@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "CI-base",
+      "displayName": "${hostSystemName} ${generator} configuration",
+      "description": "This is CI ${generator} preset for ${hostSystemName} build agent",
+      "binaryDir": "${sourceDir}/${presetName}-build",
+      "hidden": false,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_VERBOSE_MAKEFILE": "true"
+      },
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Default"
+        }
+      },
+      "environment": {
+        "CLANG_TOOLCHAIN": "/opt/homebrew/opt/llvm/Toolchains/LLVM15.0.6.xctoolchain"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "CI-base",
+      "verbose": true,
+      "hidden": true
+    }
+  ]
+}
