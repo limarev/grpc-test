@@ -1,8 +1,8 @@
 {
-  "version": 3,
+  "version": 4,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 23,
+    "minor": 22,
     "patch": 0
   },
   "configurePresets": [
@@ -11,7 +11,7 @@
       "displayName": "${hostSystemName} ${generator} configuration",
       "description": "This is CI ${generator} preset for ${hostSystemName} build agent",
       "binaryDir": "${sourceDir}/${presetName}-build",
-      "hidden": false,
+      "hidden": true,
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_VERBOSE_MAKEFILE": "true"
